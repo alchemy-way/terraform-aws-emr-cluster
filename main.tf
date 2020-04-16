@@ -426,7 +426,6 @@ resource "aws_emr_cluster" "default" {
         jar = step.value.hadoop_jar_step.jar
         args = step.value.hadoop_jar_step.args
         main_class = step.value.hadoop_jar_step.main_class
-        properties = step.value.hadoop_jar_step.properties
       }
     }
   }
