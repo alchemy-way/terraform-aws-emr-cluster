@@ -335,3 +335,18 @@ variable "bootstrap_action" {
   description = "List of bootstrap actions that will be run before Hadoop is started on the cluster nodes"
   default     = []
 }
+
+variable "step" {
+  type = list(object({
+    action_on_failure = string
+    hadoop_jar_step = object({
+      args = list(string)
+      jar = string
+      main_class = string
+      properties = map(string)
+    })
+    name: string
+  }))
+  description = "List of steps that will be run after Hadoop is started on the cluster nodes"
+  default     = []
+}

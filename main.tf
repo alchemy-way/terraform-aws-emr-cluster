@@ -417,6 +417,15 @@ resource "aws_emr_cluster" "default" {
     }
   }
 
+  dynamic "step" {
+    for_each = var.step
+    content {
+      name = step.value.name
+      action_on_failure = step.value.action_on_failure
+      hadoop_jar_step = step.value.hadoop_jar_step
+    }
+  }
+  
   configurations_json = var.configurations_json
 
   log_uri = var.log_uri
