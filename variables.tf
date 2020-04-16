@@ -344,7 +344,6 @@ variable "step" {
       args = list(string)
       jar = string
       main_class = string
-      properties = map(string)
     })
   }))
   description = "List of steps that will be run after Hadoop is started on the cluster nodes"
