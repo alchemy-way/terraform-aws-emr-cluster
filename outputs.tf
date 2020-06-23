@@ -27,3 +27,8 @@ output "master_host" {
   value       = module.dns_master.hostname
   description = "Name of the cluster CNAME record for the master nodes in the parent DNS zone"
 }
+
+output "iam_role_arn" {
+  value       = aws_iam_role.emr.arn 
+  description = "The ARN of the iam role created for this cluster"
+}
