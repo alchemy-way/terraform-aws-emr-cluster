@@ -74,6 +74,12 @@ variable "vpc_id" {
   description = "VPC ID to create the cluster in (e.g. `vpc-a22222ee`)"
 }
 
+variable "vpc_endpoint_s3" {
+  type        = bool
+  description = "Override wether to create a vpc endpoint for S3 or not due to it already existing in a VPC already built"
+  default     = true
+}
+
 variable "master_dns_name" {
   type        = string
   description = "Name of the cluster CNAME record to create in the parent DNS zone specified by `zone_id`. If left empty, the name will be auto-asigned using the format `emr-master-var.name`"
