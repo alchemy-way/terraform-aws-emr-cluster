@@ -243,6 +243,7 @@ Available targets:
 | termination_protection | Switch on/off termination protection (default is false, except when using multiple master nodes). Before attempting to destroy the resource when termination protection is enabled, this configuration must be applied with its value set to false | bool | `false` | no |
 | visible_to_all_users | Whether the job flow is visible to all IAM users of the AWS account associated with the job flow | bool | `true` | no |
 | vpc_id | VPC ID to create the cluster in (e.g. `vpc-a22222ee`) | string | - | yes |
+| vpc_endpoint_s3 | Override wether to create a vpc endpoint for S3 or not due to it already existing in a VPC already built | string | true | no |
 | zone_id | Route53 parent zone ID. If provided (not empty), the module will create sub-domain DNS records for the masters and slaves | string | `null` | no |
 
 ## Outputs
