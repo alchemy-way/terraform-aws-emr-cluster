@@ -28,7 +28,12 @@ output "master_host" {
   description = "Name of the cluster CNAME record for the master nodes in the parent DNS zone"
 }
 
-output "iam_role_name" {
-  value       = aws_iam_role.emr.name
+output "iam_role_emr_name" {
+  value       = join("", aws_iam_role.emr.*.name)
   description = "The Name of the iam role created for this cluster"
+}
+
+output "iam_role_ec2_name" {
+  value       = join("", aws_iam_role.ec2.*.name)
+  description = "The Name of the iam role created for this cluster for EC2 instances"
 }
